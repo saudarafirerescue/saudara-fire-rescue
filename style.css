@@ -388,7 +388,7 @@ nav a:hover{
 
 .berita-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+    grid-template-columns:repeat(3,1fr);
     gap:30px;
 }
 
@@ -509,4 +509,30 @@ nav a:hover{
     padding:40px;
     border-radius:15px;
     box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+/* ================= BERITA SLIDER HP ================= */
+@media(max-width:768px){
+
+    .berita-grid{
+        display:flex;
+        overflow-x:auto;
+        gap:20px;
+        scroll-snap-type:x mandatory;
+        padding-bottom:10px;
+    }
+
+    .berita-card{
+        min-width:85%;
+        flex:0 0 auto;
+        scroll-snap-align:start;
+    }
+
+    /* sembunyikan scrollbar */
+    .berita-grid::-webkit-scrollbar{
+        display:none;
+    }
+
+}
+.berita-grid{
+    scroll-behavior:smooth;
 }
