@@ -13,20 +13,17 @@
 
     <div class="overlay"></div>
 
-    <!-- NAVIGATION -->
-
-    <!-- LOGO -->
     <div class="logo-container">
         <img src="logo1.png" class="logo" alt="Logo 1">
         <img src="logo2.png" class="logo" alt="Logo 2">
     </div>
 
-    <!-- TITLE -->
     <div class="hero-text">
         <h1>Saudara Fire Rescue</h1>
         <p>Selamat Datang di Website resmi Saudara Fire Rescue.</p>
         <p>#TeruslahBerbuatBaik #dariumatuntukumat</p>
     </div>
+
     <nav>
         <a href="#">Home</a>
         <a href="#emergency">☎️Emergency Call</a>
@@ -36,47 +33,55 @@
     </nav>
 
 </header>
+
 <!-- ================= BERITA TERKINI ================= -->
 <section id="berita" class="berita">
     <div class="container">
 
         <h2 class="section-title">BERITA TERKINI</h2>
 
-        <div class="berita-grid">
+        <div class="berita-wrapper">
 
-            <!-- Berita 1 -->
-             <div class="berita-card">
-                <img src="unitsetia.jpg" alt="Berita 1">
-                <div class="berita-content">
-                    <span class="tanggal">23 Februari 2026</span>
-                    <h3>Kebarakan di Jl. Setia, Pemurus Dalam, Banjarmasin</h3>
-                    <p>Siang Hari, Dua Rumah Hangus Terbakar di Pemurus Dalam Banjarmasin</p>
-                    <a href="berita1.html" class="read-more">Baca Selengkapnya →</a>
-                </div>
-            </div>
-           
+            <button class="arrow left" onclick="scrollBerita(-1)">❮</button>
 
-            <!-- Berita 2 -->
-             <div class="berita-card">
-                <img src="waterrescue.jpg" alt="Berita 2">
-                <div class="berita-content">
-                    <span class="tanggal">14-15 November 2025</span>
-                    <h3>Pelatihan Water Rescue 2025</h3>
-                    <p>Banjarbaru Rescue 698 Ikuti Kegiatan Pelatihan Water Rescue 2025 yang Digelar BPBD Kota Banjarbaru</p>
-                    <a href="berita2.html" class="read-more">Baca Selengkapnya →</a>
+            <div class="berita-grid" id="beritaSlider">
+
+                <!-- Berita 1 -->
+                <div class="berita-card">
+                    <img src="unitsetia.jpg" alt="Berita 1">
+                    <div class="berita-content">
+                        <span class="tanggal">23 Februari 2026</span>
+                        <h3>Kebakaran di Jl. Setia, Pemurus Dalam, Banjarmasin</h3>
+                        <p>Siang hari, dua rumah hangus terbakar di kawasan Pemurus Dalam Banjarmasin.</p>
+                        <a href="berita1.html" class="read-more">Baca Selengkapnya →</a>
+                    </div>
                 </div>
+
+                <!-- Berita 2 -->
+                <div class="berita-card">
+                    <img src="waterrescue.jpg" alt="Berita 2">
+                    <div class="berita-content">
+                        <span class="tanggal">14-15 November 2025</span>
+                        <h3>Pelatihan Water Rescue 2025</h3>
+                        <p>Banjarbaru Rescue 698 mengikuti kegiatan pelatihan Water Rescue yang digelar BPBD Kota Banjarbaru.</p>
+                        <a href="berita2.html" class="read-more">Baca Selengkapnya →</a>
+                    </div>
+                </div>
+
+                <!-- Berita 3 -->
+                <div class="berita-card">
+                    <img src="batibati.jpg" alt="Berita 3">
+                    <div class="berita-content">
+                        <span class="tanggal">17 Februari 2026</span>
+                        <h3>Kebakaran di Desa Pandahan, Kec. Bati-Bati</h3>
+                        <p>Api berkobar cepat dan menghanguskan beberapa rumah warga di wilayah Tanahlaut.</p>
+                        <a href="berita3.html" class="read-more">Baca Selengkapnya →</a>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- Berita 3 -->
-            <div class="berita-card">
-                <img src="batibati.jpg" alt="Berita 3">
-                <div class="berita-content">
-                    <span class="tanggal">17 Februari 2026</span>
-                    <h3>Kebakaran di Desa Pandahan, Kec. Bati-Bati</h3>
-                    <p>Kebakaran di Lianganggang Tanahlaut, Api Berkobar dengan Cepat, Tiga Rumah Dikabarkan Hangus</p>
-                    <a href="berita3.html" class="read-more">Baca Selengkapnya →</a>
-                </div>
-            </div>
+            <button class="arrow right" onclick="scrollBerita(1)">❯</button>
 
         </div>
     </div>
@@ -84,9 +89,7 @@
 
 <!-- ================= EMERGENCY ================= -->
 <section id="emergency" class="emergency">
-    <h2>
-        🚨EMERGENCY🚨 <br> CALL
-    </h2> 
+    <h2>🚨EMERGENCY🚨 <br> CALL</h2>
     <p>Segera hubungi kami jika terjadi keadaan darurat</p>
 
     <div class="btn-container">
@@ -138,9 +141,7 @@
         <a href="kepengurusan.pdf" target="_blank" class="org-link">
             <img src="group2.png" class="org-icon" alt="Icon Struktur">
             <h2>STRUKTUR KEPENGURUSAN</h2>
-            <div class="arrow">&#9654;</div>
         </a>
-
         <p class="org-desc">Klik untuk melihat struktur kepengurusan</p>
     </div>
 </section>
@@ -149,7 +150,6 @@
 <section id="sosial" class="media-section">
     <div class="media-wrapper">
 
-        <!-- KIRI -->
         <div class="media-left">
             <h2>MEDIA SOSIAL</h2>
 
@@ -173,12 +173,10 @@
             </div>
         </div>
 
-        <!-- KANAN -->
         <div class="media-right">
             <video id="myVideo" autoplay muted loop playsinline>
                 <source src="video2.mp4" type="video/mp4">
             </video>
-
             <div class="video-info">
                 🔊 Klik video untuk mengaktifkan suara.
             </div>
@@ -187,7 +185,7 @@
     </div>
 </section>
 
-<!-- ================= SCRIPT SOUND ================= -->
+<!-- ================= SCRIPT ================= -->
 <script>
 const video = document.getElementById("myVideo");
 
@@ -195,6 +193,16 @@ video.addEventListener("click", function() {
     video.muted = false;
     video.play();
 });
+
+function scrollBerita(direction){
+    const slider = document.getElementById("beritaSlider");
+    const cardWidth = slider.querySelector(".berita-card").offsetWidth + 20;
+
+    slider.scrollBy({
+        left: direction * cardWidth,
+        behavior: "smooth"
+    });
+}
 </script>
 
 </body>
