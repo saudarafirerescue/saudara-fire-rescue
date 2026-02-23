@@ -550,6 +550,12 @@ nav a:hover{
     align-items:center;
 }
 
+/* ================= WRAPPER SLIDER ================= */
+.berita-wrapper{
+    position:relative;
+}
+
+/* ================= PANAH SLIDER ================= */
 .arrow{
     position:absolute;
     top:50%;
@@ -561,21 +567,34 @@ nav a:hover{
     border-radius:50%;
     font-size:22px;
     cursor:pointer;
-    z-index:10;
-    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
 }
 
+/* posisi kiri */
 .arrow.left{
-    left:-20px;
+    left:10px;
 }
 
+/* posisi kanan */
 .arrow.right{
-    right:-20px;
+    right:10px;
 }
 
+/* efek hover */
 .arrow:hover{
     background:black;
     color:#c6ff00;
+}
+
+/* sembunyikan di desktop */
+@media(min-width:769px){
+    .arrow{
+        display:none;
+    }
 }
 
 /* sembunyikan panah di desktop */
