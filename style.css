@@ -437,15 +437,22 @@ nav a:hover{
 @media(max-width:768px){
 
     .berita-grid{
-        grid-template-columns:1fr;
+        display:flex;
+        overflow-x:auto;
+        gap:20px;
+        scroll-snap-type:x mandatory;
+        padding-bottom:10px;
     }
 
-    /* sembunyikan berita ke-2 dan ke-3 */
-    .berita-card:nth-child(2),
-    .berita-card:nth-child(3){
+    .berita-card{
+        min-width:85%;
+        flex:0 0 auto;
+        scroll-snap-align:start;
+    }
+
+    .berita-grid::-webkit-scrollbar{
         display:none;
     }
-
 }
 /* ================= MEDIA SOSIAL RESPONSIVE ================= */
 @media(max-width:768px){
