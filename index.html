@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saudara Fire Rescue</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="hero">
+
+    <div class="overlay"></div>
+
+    <!-- NAVIGATION -->
+
+    <!-- LOGO -->
+    <div class="logo-container">
+        <img src="logo1.png" class="logo" alt="Logo 1">
+        <img src="logo2.png" class="logo" alt="Logo 2">
+    </div>
+
+    <!-- TITLE -->
+    <div class="hero-text">
+        <h1>Saudara Fire Rescue</h1>
+        <p>Selamat Datang di Website resmi Saudara Fire Rescue.</p>
+        <p>#TeruslahBerbuatBaik</p>
+    </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#emergency">☎️Emergency Call</a>
+        <a href="#alamat">Alamat Sekretariat</a>
+        <a href="#struktur">Struktur Organisasi</a>
+        <a href="#sosial">Media Sosial</a>
+    </nav>
+
+</header>
+
+<!-- ================= EMERGENCY ================= -->
+<section id="emergency" class="emergency">
+    <h2>
+        🚨EMERGENCY🚨 <br> CALL
+    </h2> 
+    <p>Segera hubungi kami jika terjadi keadaan darurat</p>
+
+    <div class="btn-container">
+        <a href="https://wa.me/628125037363" target="_blank" class="btn">
+            ☎️ EMERGENCY CALL 1
+        </a>
+
+        <a href="https://wa.me/6281952424183" target="_blank" class="btn">
+            ☎️ EMERGENCY CALL 2
+        </a>
+    </div>
+</section>
+
+<!-- ================= ALAMAT ================= -->
+<section id="alamat" class="alamat">
+    
+    <div class="alamat-left">
+        <img src="sekretariat.jpg" alt="Sekretariat">
+    </div>
+
+    <div class="alamat-right">
+
+        <div class="alamat-card">
+            <div class="alamat-icon">
+                <img src="pin.png" class="org-icon" alt="Icon Lokasi">
+            </div>
+            <h3>Alamat Sekretariat Banjarbaru</h3>
+            <a href="https://maps.app.goo.gl/ZSL4D9rday7AdnJ1A" target="_blank" class="alamat-btn">
+                Link Google Map
+            </a>
+        </div>
+
+        <div class="alamat-card">
+            <div class="alamat-icon">
+                <img src="pin.png" class="org-icon" alt="Icon Lokasi">
+            </div>
+            <h3>Alamat Sekretariat Banjarmasin</h3>
+            <a href="https://maps.app.goo.gl/9xzZFPc6gZyEeFtf7" target="_blank" class="alamat-btn">
+                Link Google Map
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= STRUKTUR ================= -->
+<section id="struktur" class="organisasi">
+    <div class="org-container">
+        <a href="kepengurusan.pdf" target="_blank" class="org-link">
+            <img src="group2.png" class="org-icon" alt="Icon Struktur">
+            <h2>STRUKTUR KEPENGURUSAN</h2>
+            <div class="arrow">&#9654;</div>
+        </a>
+
+        <p class="org-desc">Klik untuk melihat struktur kepengurusan</p>
+    </div>
+</section>
+
+<!-- ================= MEDIA SOSIAL ================= -->
+<section id="sosial" class="media-section">
+    <div class="media-wrapper">
+
+        <!-- KIRI -->
+        <div class="media-left">
+            <h2>MEDIA SOSIAL</h2>
+
+            <div class="icon-wrapper">
+
+                <a href="https://instagram.com/saudara_firerescue" target="_blank" class="icon-item">
+                    <img src="instagram.png" alt="Instagram">
+                    <p>Instagram</p>
+                </a>
+
+                <a href="https://tiktok.com/@saudara_rescue" target="_blank" class="icon-item">
+                    <img src="tiktok.png" alt="TikTok">
+                    <p>TikTok</p>
+                </a>
+
+                <a href="https://youtube.com/@saudarafirerescuebjb" target="_blank" class="icon-item">
+                    <img src="youtube.png" alt="YouTube">
+                    <p>YouTube</p>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- KANAN -->
+        <div class="media-right">
+            <video id="myVideo" autoplay muted loop playsinline>
+                <source src="video2.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-info">
+                🔊 Klik video untuk mengaktifkan suara.
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= SCRIPT SOUND ================= -->
+<script>
+const video = document.getElementById("myVideo");
+
+video.addEventListener("click", function() {
+    video.muted = false;
+    video.play();
+});
+</script>
+
+</body>
+</html>
