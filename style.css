@@ -373,3 +373,140 @@ nav a:hover{
     }
 
 }
+/* ================= BERITA ================= */
+.berita{
+    padding:80px 10%;
+    background:#f5f5f5;
+}
+
+.section-title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:50px;
+    font-weight:bold;
+}
+
+.berita-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+    gap:30px;
+}
+
+.berita-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.berita-card:hover{
+    transform:translateY(-5px);
+}
+
+.berita-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.berita-content{
+    padding:20px;
+}
+
+.tanggal{
+    font-size:14px;
+    color:gray;
+}
+
+.berita-content h3{
+    margin:10px 0;
+}
+
+.berita-content p{
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.read-more{
+    text-decoration:none;
+    font-weight:bold;
+    color:#c40000;
+}
+/* ================= HP HANYA 1 BERITA ================= */
+@media(max-width:768px){
+
+    .berita-grid{
+        grid-template-columns:1fr;
+    }
+
+    /* sembunyikan berita ke-2 dan ke-3 */
+    .berita-card:nth-child(2),
+    .berita-card:nth-child(3){
+        display:none;
+    }
+
+}
+/* ================= MEDIA SOSIAL RESPONSIVE ================= */
+@media(max-width:768px){
+
+    .media-left h2{
+        font-size:28px;      /* perkecil ukuran */
+        line-height:1.2;     /* rapatkan jarak */
+        text-align:center;
+        letter-spacing:1px;
+    }
+
+}
+@media(max-width:768px){
+
+    .media-left h2{
+        font-size:26px;
+        line-height:1.2;
+        text-align:center;
+    }
+
+}
+/* ================= DETAIL BERITA ================= */
+.detail-berita{
+    padding:80px 10%;
+}
+
+.container-detail{
+    max-width:800px;
+    margin:auto;
+}
+
+.container-detail img{
+    width:100%;
+    border-radius:15px;
+    margin:20px 0;
+}
+
+.tanggal-detail{
+    color:gray;
+    margin-bottom:20px;
+}
+
+.kembali{
+    display:inline-block;
+    margin-top:30px;
+    text-decoration:none;
+    font-weight:bold;
+    color:#c40000;
+}
+/* ================= DETAIL BERITA RAPI ================= */
+.container-detail p{
+    text-align:justify;     /* rata kanan kiri */
+    line-height:1.8;        /* jarak antar baris */
+    margin-bottom:20px;     /* jarak antar paragraf */
+    font-size:17px;
+}
+.container-detail{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
