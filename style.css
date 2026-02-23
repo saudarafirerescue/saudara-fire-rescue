@@ -543,3 +543,44 @@ nav a:hover{
 .berita-grid{
     scroll-behavior:smooth;
 }
+/* ================= PANAH SLIDER ================= */
+.berita-wrapper{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:#c6ff00;
+    border:none;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    font-size:22px;
+    cursor:pointer;
+    z-index:10;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.arrow.left{
+    left:-20px;
+}
+
+.arrow.right{
+    right:-20px;
+}
+
+.arrow:hover{
+    background:black;
+    color:#c6ff00;
+}
+
+/* sembunyikan panah di desktop */
+@media(min-width:769px){
+    .arrow{
+        display:none;
+    }
+}
