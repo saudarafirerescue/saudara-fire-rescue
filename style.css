@@ -628,3 +628,46 @@ nav a:hover{
                 ← Kembali ke Beranda
             </a>
         </div>
+
+
+/* ===== SLIDER WRAPPER ===== */
+.slider-wrapper{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.berita-grid{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+}
+
+.berita-grid::-webkit-scrollbar{
+    display:none;
+}
+
+/* ===== PANAH ===== */
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:#c6ff00;
+    border:none;
+    font-size:22px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    cursor:pointer;
+    z-index:10;
+}
+
+.arrow.left{
+    left:-25px;
+}
+
+.arrow.right{
+    right:-25px;
+}
