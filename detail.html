@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detail Berita</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="detail-berita">
+  <div class="container-detail" id="detailContainer">
+    Loading...
+  </div>
+</section>
+
+<script>
+const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNW6I7-bM0Ej6QZpjlMvh4CgYSLMe4IA8PmXQ72vEUx9zCwBmTrFo7WY-021Zy8mCW4Alhx9s4uphI/pubhtml";
+
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get("id");
+
+fetch(sheetURL)
+  .then(response => response.text())
+  .then(data => {
+
+    const rows = data.split("\n").slice(1);
+    const container = document.getElementById("detailContainer");
+
+    rows.forEach(row => {
+      const cols = row.split(",");
+      if(cols.length < 6) return;
+
+      if(cols[0].trim() === id){
+
+        container.innerHTML = `
+          <h1>${cols[2].trim()}</h1>
+          <p class="tanggal-detail">${cols[1].trim()}</p>
+          <img src="${cols[4].trim()}" alt="Berita">
+          <p>${cols[5].trim()}</p>
+          <a href="index.html#berita" class="kembali">← Kembali ke Berita</a>
+        `;
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
