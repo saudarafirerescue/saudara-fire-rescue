@@ -42,6 +42,11 @@
         <h2 class="section-title">BERITA TERKINI</h2>
 
         <div class="berita-wrapper">
+         <div style="text-align:center; margin-top:40px;">
+    <a href="semua-berita.html" class="btn">
+        Lihat Semua Berita
+    </a>
+</div>
 
             <button class="arrow left" onclick="scrollBerita(-1)">❮</button>
 
@@ -164,15 +169,18 @@ fetch(sheetURL)
     const slider = document.getElementById("beritaSlider");
     slider.innerHTML = "";
 
-    data.forEach(item => {
+    // Ambil hanya 3 berita pertama
+    const limitedData = data.slice(0,3);
+
+    limitedData.forEach(item => {
 
       slider.innerHTML += `
         <div class="berita-card">
-          <img src="${item.gambar || 'https://via.placeholder.com/400x200'}" alt="Berita">
+          <img src="${item.gambar}" alt="Berita">
           <div class="berita-content">
-            <span class="tanggal">${item.tanggal || '-'}</span>
-            <h3>${item.judul || 'Judul tidak ada'}</h3>
-            <p>${item.deskripsi || ''}</p>
+            <span class="tanggal">${item.tanggal}</span>
+            <h3>${item.judul}</h3>
+            <p>${item.deskripsi}</p>
             <a href="detail.html?id=${item.id}" class="read-more">
               Baca Selengkapnya →
             </a>
