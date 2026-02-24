@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semua Berita</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="berita">
+    <div class="container">
+        <h2 class="section-title">SEMUA BERITA</h2>
+        <div class="berita-grid" id="allBerita"></div>
+    </div>
+</section>
+
+<script>
+const sheetURL = "https://opensheet.elk.sh/1wj9iSetBFM1dcvdS5iF-t0eWEz7T-qjIcfj-XqW5icQ/Sheet1";
+
+fetch(sheetURL)
+  .then(res => res.json())
+  .then(data => {
+
+    const container = document.getElementById("allBerita");
+
+    data.forEach(item => {
+
+      container.innerHTML += `
+        <div class="berita-card">
+          <img src="${item.gambar}" alt="Berita">
+          <div class="berita-content">
+            <span class="tanggal">${item.tanggal}</span>
+            <h3>${item.judul}</h3>
+            <p>${item.deskripsi}</p>
+            <a href="detail.html?id=${item.id}" class="read-more">
+              Baca Selengkapnya →
+            </a>
+          </div>
+        </div>
+      `;
+    });
+
+  });
+</script>
+
+</body>
+</html>
