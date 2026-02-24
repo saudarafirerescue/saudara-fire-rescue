@@ -27,7 +27,7 @@
     <nav>
         <a href="#">Home</a>
         <a href="#emergency">☎️Emergency Call</a>
-        <a href="#berita">Laporan Terkini</a>
+        <a href="#berita">Berita Terkini</a>
         <a href="#alamat">Alamat Sekretariat</a>
         <a href="#struktur">Struktur Kepengurusan</a>
         <a href="#sosial">Media Sosial</a>
@@ -39,48 +39,14 @@
 <section id="berita" class="berita">
     <div class="container">
 
-        <h2 class="section-title">LAPORAN TERKINI</h2>
+        <h2 class="section-title">BERITA TERKINI</h2>
 
         <div class="berita-wrapper">
 
             <button class="arrow left" onclick="scrollBerita(-1)">❮</button>
 
-            <div class="berita-grid" id="beritaSlider">
-
-                <!-- Berita 1 -->
-                <div class="berita-card">
-                    <img src="unitsetia.jpg" alt="Berita 1">
-                    <div class="berita-content">
-                        <span class="tanggal">23 Februari 2026</span>
-                        <h3>Kebakaran di Jl. Setia, Pemurus Dalam, Banjarmasin</h3>
-                        <p>Siang hari, dua rumah hangus terbakar di kawasan Pemurus Dalam Banjarmasin.</p>
-                        <a href="berita1.html" class="read-more">Baca Selengkapnya →</a>
-                    </div>
-                </div>
-
-                <!-- Berita 2 -->
-                <div class="berita-card">
-                    <img src="waterrescue.jpg" alt="Berita 2">
-                    <div class="berita-content">
-                        <span class="tanggal">14-15 November 2025</span>
-                        <h3>Pelatihan Water Rescue 2025</h3>
-                        <p>Banjarbaru Rescue 698 mengikuti kegiatan pelatihan Water Rescue yang digelar BPBD Kota Banjarbaru.</p>
-                        <a href="berita2.html" class="read-more">Baca Selengkapnya →</a>
-                    </div>
-                </div>
-
-                <!-- Berita 3 -->
-                <div class="berita-card">
-                    <img src="batibati.jpg" alt="Berita 3">
-                    <div class="berita-content">
-                        <span class="tanggal">17 Februari 2026</span>
-                        <h3>Kebakaran di Desa Pandahan, Kec. Bati-Bati</h3>
-                        <p>Api berkobar cepat dan menghanguskan beberapa rumah warga di wilayah Tanahlaut.</p>
-                        <a href="berita3.html" class="read-more">Baca Selengkapnya →</a>
-                    </div>
-                </div>
-
-            </div>
+            <!-- Kosong, nanti otomatis terisi -->
+            <div class="berita-grid" id="beritaSlider"></div>
 
             <button class="arrow right" onclick="scrollBerita(1)">❯</button>
 
@@ -104,100 +70,47 @@
     </div>
 </section>
 
-<!-- ================= ALAMAT ================= -->
-<section id="alamat" class="alamat">
-    
-    <div class="alamat-left">
-        <img src="sekretariat.jpg" alt="Sekretariat">
-    </div>
-
-    <div class="alamat-right">
-
-        <div class="alamat-card">
-            <div class="alamat-icon">
-                <img src="pin.png" class="org-icon" alt="Icon Lokasi">
-            </div>
-            <h3>Alamat Sekretariat Banjarbaru</h3>
-            <a href="https://maps.app.goo.gl/ZSL4D9rday7AdnJ1A" target="_blank" class="alamat-btn">
-                Link Google Map
-            </a>
-        </div>
-
-        <div class="alamat-card">
-            <div class="alamat-icon">
-                <img src="pin.png" class="org-icon" alt="Icon Lokasi">
-            </div>
-            <h3>Alamat Sekretariat Banjarmasin</h3>
-            <a href="https://maps.app.goo.gl/9xzZFPc6gZyEeFtf7" target="_blank" class="alamat-btn">
-                Link Google Map
-            </a>
-        </div>
-
-    </div>
-</section>
-
-<!-- ================= STRUKTUR ================= -->
-<section id="struktur" class="organisasi">
-    <div class="org-container">
-        <a href="kepengurusan.pdf" target="_blank" class="org-link">
-            <img src="group2.png" class="org-icon" alt="Icon Struktur">
-            <h2>STRUKTUR KEPENGURUSAN</h2>
-        </a>
-        <p class="org-desc">Klik untuk melihat struktur kepengurusan</p>
-    </div>
-</section>
-
-<!-- ================= MEDIA SOSIAL ================= -->
-<section id="sosial" class="media-section">
-    <div class="media-wrapper">
-
-        <div class="media-left">
-            <h2>MEDIA SOSIAL</h2>
-
-            <div class="icon-wrapper">
-
-                <a href="https://instagram.com/saudara_firerescue" target="_blank" class="icon-item">
-                    <img src="instagram.png" alt="Instagram">
-                    <p>Instagram</p>
-                </a>
-
-                <a href="https://tiktok.com/@saudara_rescue" target="_blank" class="icon-item">
-                    <img src="tiktok.png" alt="TikTok">
-                    <p>TikTok</p>
-                </a>
-
-                <a href="https://youtube.com/@saudarafirerescuebjb" target="_blank" class="icon-item">
-                    <img src="youtube.png" alt="YouTube">
-                    <p>YouTube</p>
-                </a>
-
-            </div>
-        </div>
-
-        <div class="media-right">
-            <video id="myVideo" autoplay muted loop playsinline>
-                <source src="video2.mp4" type="video/mp4">
-            </video>
-            <div class="video-info">
-                🔊 Klik video untuk mengaktifkan suara.
-            </div>
-        </div>
-
-    </div>
-</section>
-
 <!-- ================= SCRIPT ================= -->
 <script>
-const video = document.getElementById("myVideo");
+// ================= AUTO AMBIL BERITA DARI GOOGLE SHEET =================
 
-video.addEventListener("click", function() {
-    video.muted = false;
-    video.play();
-});
+// GANTI DENGAN LINK CSV GOOGLE SHEET KAMU
+const sheetURL = "LINK_CSV_KAMU_DISINI";
 
+fetch(sheetURL)
+  .then(response => response.text())
+  .then(data => {
+
+    const rows = data.split("\n").slice(1);
+    const slider = document.getElementById("beritaSlider");
+
+    rows.forEach(row => {
+      const cols = row.split(",");
+
+      if(cols.length < 5) return;
+
+      slider.innerHTML += `
+        <div class="berita-card">
+          <img src="${cols[3].trim()}" alt="Berita">
+          <div class="berita-content">
+            <span class="tanggal">${cols[0].trim()}</span>
+            <h3>${cols[1].trim()}</h3>
+            <p>${cols[2].trim()}</p>
+            <a href="${cols[4].trim()}" class="read-more">Baca Selengkapnya →</a>
+          </div>
+        </div>
+      `;
+    });
+  });
+
+// ================= SLIDER PANAH =================
 function scrollBerita(direction){
     const slider = document.getElementById("beritaSlider");
-    const cardWidth = slider.querySelector(".berita-card").offsetWidth + 20;
+    const card = slider.querySelector(".berita-card");
+
+    if(!card) return;
+
+    const cardWidth = card.offsetWidth + 20;
 
     slider.scrollBy({
         left: direction * cardWidth,
