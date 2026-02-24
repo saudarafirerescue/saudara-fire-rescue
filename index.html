@@ -72,34 +72,33 @@
 
 <!-- ================= SCRIPT ================= -->
 <script>
-const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNW6I7-bM0Ej6QZpjlMvh4CgYSLMe4IA8PmXQ72vEUx9zCwBmTrFo7WY-021Zy8mCW4Alhx9s4uphI/pubhtml";
+const sheetURL = "https://opensheet.elk.sh/1wj9iSetBFM1dcvdS5iF-t0eWEz7T-qjIcfj-XqW5icQ/Sheet1";
 
 fetch(sheetURL)
-  .then(response => response.text())
+  .then(res => res.json())
   .then(data => {
 
-    const rows = data.split("\n").slice(1);
     const slider = document.getElementById("beritaSlider");
 
-    rows.forEach(row => {
-      const cols = row.split(",");
-      if(cols.length < 6) return;
+    data.forEach(item => {
 
       slider.innerHTML += `
         <div class="berita-card">
-          <img src="${cols[4].trim()}" alt="Berita">
+          <img src="${item.gambar}" alt="Berita">
           <div class="berita-content">
-            <span class="tanggal">${cols[1].trim()}</span>
-            <h3>${cols[2].trim()}</h3>
-            <p>${cols[3].trim()}</p>
-            <a href="detail.html?id=${cols[0].trim()}" class="read-more">
+            <span class="tanggal">${item.tanggal}</span>
+            <h3>${item.judul}</h3>
+            <p>${item.deskripsi}</p>
+            <a href="detail.html?id=${item.id}" class="read-more">
               Baca Selengkapnya →
             </a>
           </div>
         </div>
       `;
     });
+
   });
+</script>
 </script>
 
 // ================= SLIDER PANAH =================
