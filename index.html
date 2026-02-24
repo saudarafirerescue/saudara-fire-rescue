@@ -72,9 +72,6 @@
 
 <!-- ================= SCRIPT ================= -->
 <script>
-// ================= AUTO AMBIL BERITA DARI GOOGLE SHEET =================
-
-// GANTI DENGAN LINK CSV GOOGLE SHEET KAMU
 const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNW6I7-bM0Ej6QZpjlMvh4CgYSLMe4IA8PmXQ72vEUx9zCwBmTrFo7WY-021Zy8mCW4Alhx9s4uphI/pubhtml";
 
 fetch(sheetURL)
@@ -86,22 +83,24 @@ fetch(sheetURL)
 
     rows.forEach(row => {
       const cols = row.split(",");
-
-      if(cols.length < 5) return;
+      if(cols.length < 6) return;
 
       slider.innerHTML += `
         <div class="berita-card">
-          <img src="${cols[3].trim()}" alt="Berita">
+          <img src="${cols[4].trim()}" alt="Berita">
           <div class="berita-content">
-            <span class="tanggal">${cols[0].trim()}</span>
-            <h3>${cols[1].trim()}</h3>
-            <p>${cols[2].trim()}</p>
-            <a href="${cols[4].trim()}" class="read-more">Baca Selengkapnya →</a>
+            <span class="tanggal">${cols[1].trim()}</span>
+            <h3>${cols[2].trim()}</h3>
+            <p>${cols[3].trim()}</p>
+            <a href="detail.html?id=${cols[0].trim()}" class="read-more">
+              Baca Selengkapnya →
+            </a>
           </div>
         </div>
       `;
     });
   });
+</script>
 
 // ================= SLIDER PANAH =================
 function scrollBerita(direction){
