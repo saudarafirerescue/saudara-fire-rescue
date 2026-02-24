@@ -245,7 +245,7 @@ nav a:hover{
 }
 
 .emergency h2{
-    font-size:clamp(32px,9vw,70px);
+    font-size:clamp(30px,9vw,70px);
     font-weight:900;
     letter-spacing:3px;
 }
