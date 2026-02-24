@@ -685,3 +685,51 @@ body{
     }
 
 }
+
+/* ================= FIX WARNA SEMUA BERITA ================= */
+
+.semua-berita-section{
+    background:#f5f5f5 !important;
+}
+
+.semua-berita-section .section-title{
+    color:#111 !important;
+}
+
+.semua-berita-card{
+    background:#ffffff !important;
+}
+
+.semua-berita-content h3{
+    color:#111 !important;
+}
+
+.semua-berita-content p{
+    color:#444 !important;
+}
+
+.semua-berita-content .tanggal{
+    color:#777 !important;
+}
+
+.semua-berita-content a{
+    color:#d60000 !important;
+}
+
+/* ===== Tombol Kembali ===== */
+
+.kembali-wrapper{
+    max-width:1200px;
+    margin:0 auto 40px auto;
+}
+
+.kembali-btn{
+    text-decoration:none;
+    color:#111;
+    font-weight:bold;
+    font-size:16px;
+}
+
+.kembali-btn:hover{
+    text-decoration:underline;
+}
