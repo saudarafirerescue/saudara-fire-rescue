@@ -671,3 +671,35 @@ nav a:hover{
 .arrow.right{
     right:-25px;
 }
+
+/* ================= MOBILE FIX SLIDER ================= */
+@media (max-width:768px){
+
+    .slider-wrapper{
+        position:relative;
+    }
+
+    .arrow{
+        width:40px;
+        height:40px;
+        font-size:18px;
+        top:45%;
+    }
+
+    .arrow.left{
+        left:5px;      /* jangan minus lagi */
+    }
+
+    .arrow.right{
+        right:5px;     /* jangan minus lagi */
+    }
+
+    .berita-grid{
+        padding:0 40px; /* beri ruang supaya card tidak ketutup panah */
+    }
+
+    .berita-card{
+        min-width:85%;
+    }
+
+}
