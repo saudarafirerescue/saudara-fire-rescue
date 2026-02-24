@@ -9,6 +9,7 @@
 
 <body>
 
+<!-- ================= HERO ================= -->
 <header class="hero">
 
     <div class="overlay"></div>
@@ -26,8 +27,8 @@
 
     <nav>
         <a href="#">Home</a>
-        <a href="#emergency">☎️Emergency Call</a>
-        <a href="#berita">Berita Terkini</a>
+        <a href="#emergency">☎️ Emergency Call</a>
+        <a href="#berita">Arsip Kegiatan</a>
         <a href="#alamat">Alamat Sekretariat</a>
         <a href="#struktur">Struktur Kepengurusan</a>
         <a href="#sosial">Media Sosial</a>
@@ -37,32 +38,30 @@
 
 <!-- ================= ARSIP KEGIATAN ================= -->
 <section class="berita" id="berita">
-    <div class="container">
+    <h2 class="section-title">ARSIP KEGIATAN</h2>
 
-        <h2 class="section-title">ARSIP KEGIATAN</h2>
+    <div class="slider-wrapper">
 
-        <div class="slider-wrapper">
+        <button class="arrow left" onclick="scrollBerita(-1)">❮</button>
 
-            <button class="arrow left" onclick="scrollBerita(-1)">❮</button>
-
-            <div class="berita-grid" id="beritaSlider"></div>
-
-            <button class="arrow right" onclick="scrollBerita(1)">❯</button>
-
+        <div class="berita-grid" id="beritaSlider">
+            <!-- Otomatis dari Google Sheet -->
         </div>
 
-        <div class="lihat-semua-container">
-            <a href="semua-berita.html" class="lihat-semua-btn">
-                Lihat Semua Berita
-            </a>
-        </div>
+        <button class="arrow right" onclick="scrollBerita(1)">❯</button>
 
+    </div>
+
+    <div class="lihat-semua-container">
+        <a href="semua-berita.html" class="lihat-semua-btn">
+            Lihat Semua Berita
+        </a>
     </div>
 </section>
 
 <!-- ================= EMERGENCY ================= -->
 <section id="emergency" class="emergency">
-    <h2>🚨EMERGENCY🚨 <br> CALL</h2>
+    <h2>🚨 EMERGENCY 🚨 <br> CALL</h2>
     <p>Segera hubungi kami jika terjadi keadaan darurat</p>
 
     <div class="btn-container">
@@ -86,9 +85,7 @@
     <div class="alamat-right">
 
         <div class="alamat-card">
-            <div class="alamat-icon">
-                <img src="pin.png" class="org-icon" alt="Icon Lokasi">
-            </div>
+            <img src="pin.png" class="org-icon" alt="Icon Lokasi">
             <h3>Alamat Sekretariat Banjarbaru</h3>
             <a href="https://maps.app.goo.gl/ZSL4D9rday7AdnJ1A" target="_blank" class="alamat-btn">
                 Link Google Map
@@ -96,9 +93,7 @@
         </div>
 
         <div class="alamat-card">
-            <div class="alamat-icon">
-                <img src="pin.png" class="org-icon" alt="Icon Lokasi">
-            </div>
+            <img src="pin.png" class="org-icon" alt="Icon Lokasi">
             <h3>Alamat Sekretariat Banjarmasin</h3>
             <a href="https://maps.app.goo.gl/9xzZFPc6gZyEeFtf7" target="_blank" class="alamat-btn">
                 Link Google Map
@@ -110,13 +105,11 @@
 
 <!-- ================= STRUKTUR ================= -->
 <section id="struktur" class="organisasi">
-    <div class="org-container">
-        <a href="kepengurusan.pdf" target="_blank" class="org-link">
-            <img src="group2.png" class="org-icon" alt="Icon Struktur">
-            <h2>STRUKTUR KEPENGURUSAN</h2>
-        </a>
-        <p class="org-desc">Klik untuk melihat struktur kepengurusan</p>
-    </div>
+    <a href="kepengurusan.pdf" target="_blank" class="org-link">
+        <img src="group2.png" class="org-icon" alt="Icon Struktur">
+        <h2>STRUKTUR KEPENGURUSAN</h2>
+    </a>
+    <p class="org-desc">Klik untuk melihat struktur kepengurusan</p>
 </section>
 
 <!-- ================= MEDIA SOSIAL ================= -->
@@ -159,49 +152,44 @@
 </section>
 
 <!-- ================= SCRIPT ================= -->
-<!-- ================= SCRIPT ================= -->
 <script>
 const sheetURL = "https://opensheet.elk.sh/1wj9iSetBFM1dcvdS5iF-t0eWEz7T-qjIcfj-XqW5icQ/Sheet1";
 
 fetch(sheetURL)
-  .then(res => res.json())
-  .then(data => {
+.then(res => res.json())
+.then(data => {
 
     const slider = document.getElementById("beritaSlider");
     slider.innerHTML = "";
 
-    // Ambil hanya 3 berita pertama
     const limitedData = data.slice(0,3);
 
     limitedData.forEach(item => {
 
-      slider.innerHTML += `
+        slider.innerHTML += `
         <div class="berita-card">
-          <img src="${item.gambar}" alt="Berita">
-          <div class="berita-content">
-            <span class="tanggal">${item.tanggal}</span>
-            <h3>${item.judul}</h3>
-            <p>${item.deskripsi}</p>
-            <a href="detail.html?id=${item.id}" class="read-more">
-              Baca Selengkapnya →
-            </a>
-          </div>
+            <img src="${item.gambar}" alt="Berita">
+            <div class="berita-content">
+                <span class="tanggal">${item.tanggal}</span>
+                <h3>${item.judul}</h3>
+                <p>${item.deskripsi}</p>
+                <a href="detail.html?id=${item.id}" class="read-more">
+                    Baca Selengkapnya →
+                </a>
+            </div>
         </div>
-      `;
+        `;
     });
 
-  })
-  .catch(err => {
-    console.log("Error fetch:", err);
-  });
+})
+.catch(err => console.log("Error fetch:", err));
 
 function scrollBerita(direction){
     const slider = document.getElementById("beritaSlider");
     const card = slider.querySelector(".berita-card");
-
     if(!card) return;
 
-    const cardWidth = card.offsetWidth + 20;
+    const cardWidth = card.offsetWidth + 30;
 
     slider.scrollBy({
         left: direction * cardWidth,
@@ -209,5 +197,6 @@ function scrollBerita(direction){
     });
 }
 </script>
+
 </body>
 </html>
