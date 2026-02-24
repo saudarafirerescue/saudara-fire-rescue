@@ -500,3 +500,38 @@ nav a:hover{
         display:none;
     }
 }
+
+/* ================= FIX ARROW HERO MOBILE ================= */
+@media (max-width:768px){
+
+    .hero{
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero .arrow{
+        position: absolute;
+        top: 55%;              /* turunkan sedikit */
+        transform: translateY(-50%);
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+        z-index: 5;
+    }
+
+    .hero .arrow.left{
+        left: 15px;            /* jangan terlalu ke tengah */
+    }
+
+    .hero .arrow.right{
+        right: 15px;
+    }
+
+    /* supaya teks tidak ketutup */
+    .hero-text{
+        position: relative;
+        z-index: 6;
+        padding: 0 20px;
+    }
+
+}
