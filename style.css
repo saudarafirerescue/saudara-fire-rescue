@@ -120,13 +120,6 @@ nav a:hover{
     font-weight:bold;
 }
 
-/* SLIDER WRAPPER */
-.slider-wrapper{
-    position:relative;
-    display:flex;
-    align-items:center;
-}
-
 /* GRID */
 .berita-grid{
     display:flex;
