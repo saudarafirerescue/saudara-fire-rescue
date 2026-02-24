@@ -3,42 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEMUA ARSIP KEGIATAN</title>
+<title>Semua Arsip Kegiatan</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<section class="berita">
-    <div class="container">
-        <div class="kembali-container">
-            <a href="index.html#berita" class="kembali-btn">
-                ← Kembali ke Beranda
-            </a>
-        </div>
+<section class="semua-berita-section">
+
+    <div class="semua-berita-container">
+
         <h2 class="section-title">SEMUA ARSIP KEGIATAN</h2>
-        <div class="berita-grid" id="allBerita"></div>
+
+        <div class="semua-berita-grid" id="semuaBerita"></div>
+
     </div>
+
 </section>
 
 <script>
+
 const sheetURL = "https://opensheet.elk.sh/1wj9iSetBFM1dcvdS5iF-t0eWEz7T-qjIcfj-XqW5icQ/Sheet1";
 
 fetch(sheetURL)
   .then(res => res.json())
   .then(data => {
 
-    const container = document.getElementById("allBerita");
+    const container = document.getElementById("semuaBerita");
+    container.innerHTML = "";
 
     data.forEach(item => {
 
       container.innerHTML += `
-        <div class="berita-card">
+        <div class="semua-berita-card">
           <img src="${item.gambar}" alt="Berita">
-          <div class="berita-content">
+          <div class="semua-berita-content">
             <span class="tanggal">${item.tanggal}</span>
             <h3>${item.judul}</h3>
             <p>${item.deskripsi}</p>
-            <a href="detail.html?id=${item.id}" class="read-more">
+            <a href="detail.html?id=${item.id}">
               Baca Selengkapnya →
             </a>
           </div>
@@ -46,7 +49,11 @@ fetch(sheetURL)
       `;
     });
 
+  })
+  .catch(err => {
+    console.log("Error fetch:", err);
   });
+
 </script>
 
 </body>
