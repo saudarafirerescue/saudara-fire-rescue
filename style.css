@@ -535,3 +535,71 @@ nav a:hover{
     }
 
 }
+/* ================= SEMUA BERITA PAGE ================= */
+
+.semua-berita-section{
+    padding: 80px 20px;
+    background: #111;
+}
+
+.semua-berita-section .section-title{
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+.semua-berita-container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.semua-berita-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 30px;
+}
+
+.semua-berita-card{
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.semua-berita-card:hover{
+    transform: translateY(-5px);
+}
+
+.semua-berita-card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.semua-berita-content{
+    padding: 20px;
+}
+
+.semua-berita-content .tanggal{
+    font-size: 13px;
+    color: #aaa;
+}
+
+.semua-berita-content h3{
+    margin: 10px 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.semua-berita-content p{
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.semua-berita-content a{
+    text-decoration: none;
+    color: #b4ff00;
+    font-weight: bold;
+}
