@@ -602,19 +602,26 @@ nav a:hover{
     .arrow{
         display:none;
     }
+/* ================= LIHAT SEMUA BERITA ================= */
+.lihat-semua-container{
+    text-align:center;
+    margin-top:50px;
 }
+
 .lihat-semua-btn{
     display:inline-block;
     padding:14px 35px;
-    background:#111;
-    color:white;
-    font-weight:600;
+    background:#c6ff00;
+    color:black;
+    font-weight:bold;
     text-decoration:none;
-    border-radius:40px;
-    transition:0.3s;
+    border-radius:30px;
+    border:3px solid black;
+    transition:0.3s ease;
 }
 
 .lihat-semua-btn:hover{
-    background:#c6ff00;
-    color:black;
+    background:black;
+    color:#c6ff00;
+    transform:translateY(-3px);
 }
