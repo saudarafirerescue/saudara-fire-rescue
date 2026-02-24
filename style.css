@@ -625,3 +625,8 @@ nav a:hover{
     color:#c6ff00;
     transform:translateY(-3px);
 }
+        <div class="kembali-container">
+            <a href="index.html#berita" class="kembali-btn">
+                ← Kembali ke Beranda
+            </a>
+        </div>
