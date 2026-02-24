@@ -32,6 +32,7 @@ body{
     text-align:center;
     color:white;
 }
+
 .overlay{
     position:absolute;
     inset:0;
@@ -106,12 +107,138 @@ nav a:hover{
     font-size:clamp(14px,3.5vw,20px);
 }
 
+/* ================= BERITA ================= */
+.berita{
+    padding:80px 10%;
+    background:#f5f5f5;
+}
+
+.section-title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:50px;
+    font-weight:bold;
+}
+
+/* SLIDER WRAPPER */
+.slider-wrapper{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+/* GRID */
+.berita-grid{
+    display:flex;
+    gap:30px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+}
+
+.berita-grid::-webkit-scrollbar{
+    display:none;
+}
+
+/* CARD */
+.berita-card{
+    min-width:320px;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+    flex:0 0 auto;
+}
+
+.berita-card:hover{
+    transform:translateY(-5px);
+}
+
+.berita-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.berita-content{
+    padding:20px;
+}
+
+.tanggal{
+    font-size:14px;
+    color:gray;
+}
+
+.berita-content h3{
+    margin:10px 0;
+}
+
+.berita-content p{
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.read-more{
+    text-decoration:none;
+    font-weight:bold;
+    color:#c40000;
+}
+
+/* PANAH */
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:#c6ff00;
+    border:none;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    font-size:20px;
+    cursor:pointer;
+    z-index:10;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+.arrow.left{ left:-20px; }
+.arrow.right{ right:-20px; }
+
+.arrow:hover{
+    background:black;
+    color:#c6ff00;
+}
+
+/* LIHAT SEMUA */
+.lihat-semua-container{
+    text-align:center;
+    margin-top:40px;
+}
+
+.lihat-semua-btn{
+    display:inline-block;
+    padding:14px 35px;
+    background:#111;
+    color:white;
+    font-weight:600;
+    text-decoration:none;
+    border-radius:40px;
+    transition:0.3s ease;
+}
+
+.lihat-semua-btn:hover{
+    background:#c6ff00;
+    color:black;
+}
+
 /* ================= EMERGENCY ================= */
 .emergency{
     background:
         linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
         url("backgroundemergencycall.jpg") center/cover no-repeat;
-
     padding:100px 20px;
     text-align:center;
     color:white;
@@ -121,7 +248,6 @@ nav a:hover{
     font-size:clamp(32px,9vw,70px);
     font-weight:900;
     letter-spacing:3px;
-    line-height:1.1;
 }
 
 .emergency p{
@@ -129,7 +255,6 @@ nav a:hover{
     font-size:18px;
 }
 
-/* BUTTON */
 .btn-container{
     display:flex;
     justify-content:center;
@@ -191,7 +316,6 @@ nav a:hover{
     border-radius:25px;
     text-align:center;
     width:280px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
 .alamat-btn{
@@ -203,19 +327,6 @@ nav a:hover{
     border-radius:30px;
     text-decoration:none;
     font-weight:bold;
-}
-.alamat-left::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        to right,
-        rgba(198,255,0,0) 0%,
-        rgba(198,255,0,0.1) 50%,
-        rgba(198,255,0,0.3) 65%,
-        rgba(198,255,0,0.6) 80%,
-        rgba(198,255,0,0.9) 95%
-    );
 }
 
 /* ================= ORGANISASI ================= */
@@ -240,27 +351,19 @@ nav a:hover{
     transform:scale(1.05);
 }
 
-.org-icon{
-    width:120px;
-}
-
-.org-link h2{
-    font-size:40px;
-}
+.org-icon{ width:120px; }
 
 .org-desc{
     margin-top:20px;
     color:#ccc;
 }
 
-/* ================= MEDIA SOSIAL ================= */
+/* ================= MEDIA ================= */
 .media-section{
     background:#000;
     padding:120px 50px;
 }
-.media-left h2{
-    color:white;
-}
+
 .media-wrapper{
     display:flex;
     align-items:center;
@@ -270,11 +373,12 @@ nav a:hover{
 }
 
 .media-left{
-    background:#000000;
     padding:60px 50px;
     border-radius:25px;
     width:420px;
     text-align:center;
+    background:#000;
+    color:white;
 }
 
 .media-left h2{
@@ -290,7 +394,7 @@ nav a:hover{
 
 .icon-item{
     text-decoration:none;
-    color:rgb(255, 255, 255);
+    color:white;
     transition:0.3s;
 }
 
@@ -316,26 +420,43 @@ nav a:hover{
     text-align:center;
 }
 
+/* ================= DETAIL ================= */
+.detail-berita{
+    padding:80px 10%;
+}
+
+.container-detail{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+}
+
+.container-detail img{
+    width:100%;
+    border-radius:15px;
+    margin:20px 0;
+}
+
+.container-detail p{
+    text-align:justify;
+    line-height:1.8;
+    margin-bottom:20px;
+    font-size:17px;
+}
+
 /* ================= RESPONSIVE ================= */
 @media(max-width:768px){
-    
+
+    nav{
+        margin-top:160px;
+        gap:10px;
+    }
 
     nav a{
-        margin:0 10px;
+        padding:10px 18px;
         font-size:12px;
-    }
-
-    .logo-container{
-        top:70px;
-    }
-
-    .hero-text{
-        margin-top:160px;
-    }
-
-    .btn{
-        padding:18px 45px;
-        font-size:16px;
     }
 
     .alamat{
@@ -352,354 +473,30 @@ nav a:hover{
         width:100%;
     }
 
-    .emergency h2{
-        font-size:36px;
-    }
-
-    .emergency p{
-        font-size:15px;
-    }
-}
-@media(max-width:768px){
-
-    nav{
-        margin-top:180px;
-        gap:10px;
-    }
-
-    nav a{
-        padding:10px 18px;
-        font-size:12px;
-    }
-
-}
-/* ================= BERITA ================= */
-.berita{
-    padding:80px 10%;
-    background:#f5f5f5;
-}
-
-.section-title{
-    text-align:center;
-    font-size:32px;
-    margin-bottom:50px;
-    font-weight:bold;
-}
-
-.berita-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
-}
-
-.berita-card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
-
-.berita-card:hover{
-    transform:translateY(-5px);
-}
-
-.berita-card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
-
-.berita-content{
-    padding:20px;
-}
-
-.tanggal{
-    font-size:14px;
-    color:gray;
-}
-
-.berita-content h3{
-    margin:10px 0;
-}
-
-.berita-content p{
-    font-size:14px;
-    margin-bottom:15px;
-}
-
-.read-more{
-    text-decoration:none;
-    font-weight:bold;
-    color:#c40000;
-}
-/* ================= HP HANYA 1 BERITA ================= */
-@media(max-width:768px){
-
-    .berita-grid{
-        display:flex;
-        overflow-x:auto;
-        gap:20px;
-        scroll-snap-type:x mandatory;
-        padding-bottom:10px;
+    .berita{
+        padding:60px 20px;
     }
 
     .berita-card{
         min-width:85%;
-        flex:0 0 auto;
-        scroll-snap-align:start;
-    }
-
-    .berita-grid::-webkit-scrollbar{
-        display:none;
-    }
-}
-/* ================= MEDIA SOSIAL RESPONSIVE ================= */
-@media(max-width:768px){
-
-    .media-left h2{
-        font-size:28px;      /* perkecil ukuran */
-        line-height:1.2;     /* rapatkan jarak */
-        text-align:center;
-        letter-spacing:1px;
-    }
-
-}
-@media(max-width:768px){
-
-    .media-left h2{
-        font-size:26px;
-        line-height:1.2;
-        text-align:center;
-    }
-
-}
-/* ================= DETAIL BERITA ================= */
-.detail-berita{
-    padding:80px 10%;
-}
-
-.container-detail{
-    max-width:800px;
-    margin:auto;
-}
-
-.container-detail img{
-    width:100%;
-    border-radius:15px;
-    margin:20px 0;
-}
-
-.tanggal-detail{
-    color:gray;
-    margin-bottom:20px;
-}
-
-.kembali{
-    display:inline-block;
-    margin-top:30px;
-    text-decoration:none;
-    font-weight:bold;
-    color:#c40000;
-}
-/* ================= DETAIL BERITA RAPI ================= */
-.container-detail p{
-    text-align:justify;     /* rata kanan kiri */
-    line-height:1.8;        /* jarak antar baris */
-    margin-bottom:20px;     /* jarak antar paragraf */
-    font-size:17px;
-}
-.container-detail{
-    max-width:800px;
-    margin:auto;
-    background:white;
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
-/* ================= BERITA SLIDER HP ================= */
-@media(max-width:768px){
-
-    .berita-grid{
-        display:flex;
-        overflow-x:auto;
-        gap:20px;
-        scroll-snap-type:x mandatory;
-        padding-bottom:10px;
-    }
-
-    .berita-card{
-        min-width:85%;
-        flex:0 0 auto;
-        scroll-snap-align:start;
-    }
-
-    /* sembunyikan scrollbar */
-    .berita-grid::-webkit-scrollbar{
-        display:none;
-    }
-
-}
-.berita-grid{
-    scroll-behavior:smooth;
-}
-/* ================= PANAH SLIDER ================= */
-.berita-wrapper{
-    position:relative;
-    display:flex;
-    align-items:center;
-}
-
-/* ================= WRAPPER SLIDER ================= */
-.berita-wrapper{
-    position:relative;
-}
-
-/* ================= PANAH SLIDER ================= */
-.arrow{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    background:#c6ff00;
-    border:none;
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    font-size:22px;
-    cursor:pointer;
-    z-index:100;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 4px 15px rgba(0,0,0,0.2);
-}
-
-/* posisi kiri */
-.arrow.left{
-    left:10px;
-}
-
-/* posisi kanan */
-.arrow.right{
-    right:10px;
-}
-
-/* efek hover */
-.arrow:hover{
-    background:black;
-    color:#c6ff00;
-}
-
-/* sembunyikan di desktop */
-@media(min-width:769px){
-    .arrow{
-        display:none;
-    }
-}
-
-/* sembunyikan panah di desktop */
-@media(min-width:769px){
-    .arrow{
-        display:none;
-    }
-/* ================= LIHAT SEMUA BERITA ================= */
-.lihat-semua-container{
-    text-align:center;
-    margin-top:30px;
-}
-
-.lihat-semua-btn{
-    display:inline-block;
-    padding:14px 35px;
-    background:#111;
-    color:white;
-    font-weight:600;
-    text-decoration:none;
-    border-radius:40px;
-    transition:0.3s ease;
-}
-
-.lihat-semua-btn:hover{
-    background:#c6ff00;
-    color:black;
-}
-        <div class="kembali-container">
-            <a href="index.html#berita" class="kembali-btn">
-                ← Kembali ke Beranda
-            </a>
-        </div>
-
-
-/* ===== SLIDER WRAPPER ===== */
-.slider-wrapper{
-    position:relative;
-    display:flex;
-    align-items:center;
-}
-
-.berita-grid{
-    display:flex;
-    gap:20px;
-    overflow-x:auto;
-    scroll-behavior:smooth;
-    scrollbar-width:none;
-}
-
-.berita-grid::-webkit-scrollbar{
-    display:none;
-}
-
-/* ===== PANAH ===== */
-.arrow{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    background:#c6ff00;
-    border:none;
-    font-size:22px;
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    cursor:pointer;
-    z-index:10;
-}
-
-.arrow.left{
-    left:-25px;
-}
-
-.arrow.right{
-    right:-25px;
-}
-
-/* ================= MOBILE FIX SLIDER ================= */
-@media (max-width:768px){
-
-    .slider-wrapper{
-        position:relative;
     }
 
     .arrow{
         width:40px;
         height:40px;
         font-size:18px;
-        top:45%;
     }
 
-    .arrow.left{
-        left:5px;      /* jangan minus lagi */
-    }
-
-    .arrow.right{
-        right:5px;     /* jangan minus lagi */
-    }
+    .arrow.left{ left:5px; }
+    .arrow.right{ right:5px; }
 
     .berita-grid{
-        padding:0 40px; /* beri ruang supaya card tidak ketutup panah */
+        padding:0 40px;
     }
+}
 
-    .berita-card{
-        min-width:85%;
+@media(min-width:769px){
+    .arrow{
+        display:none;
     }
-
 }
