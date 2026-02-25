@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saudarafirerescue.github.io/saudara-fire-rescue/sitemap.xml
